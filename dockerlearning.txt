@@ -1,0 +1,45 @@
+https://www.youtube.com/watch?v=wCTTHhehJbU
+
+doker -v = version of the docker
+docker run hello-world = test docker
+
+-running ubuntu on docker
+docker run -it ubuntu
+- create ubuntu and name
+docker run -it --name james ubuntu
+to exit docker ctrl+ p + q
+- list of docker container running
+docker ps
+- enter your container
+docker attache james
+- to exit container
+exit
+- to show your downloaded images
+docker images
+- to remove image
+docker rmi hello-world or docker rmi -f hello-world
+- to exit container without entering 
+docker rm -f hello-world
+
+----------------------------------
+docker hub https://hub.docker.com/
+clone git : https://github.com/HermantNET/hello-system
+create docker file : https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image
+
+enter to folder build application
+docker build -t hello-system -f ./.Dockerfile .
+
+
+
+-- run your app
+docker run -it --rm --name my-running-app hello-system
+
+-- bind a port to container
+docker run -it -p 1337:80 --name hi hello-system
+
+-- start container
+docker start hi
+
+-- run on windows
+docker run -it -p 3000:80 -v //c/users/jc/desktop/hello-system/.:/usr/src/app --name hi hello-system
+
